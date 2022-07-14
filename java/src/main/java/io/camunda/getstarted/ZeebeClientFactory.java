@@ -6,10 +6,10 @@ public class ZeebeClientFactory {
 
   public static ZeebeClient getZeebeClient() {
     return ZeebeClient.newCloudClientBuilder()
-        .withClusterId("365eed98-16c1-4096-bb57-eb8828ed131e")
-        .withClientId("GZVO3ALYy~qCcD3MYq~sf0GIszNzLE_z")
-        .withClientSecret(".RPbZc6q0d6uzRbB4LW.B8lCpsxbBEpmBX0AHQGzINf3.KK9RkzZW1aDaZ-7WYNJ")
-        .withRegion("bru-2")
+        .withClusterId("ed2a6d84-b926-4bf9-b0c3-098ffdd38d45")
+        .withClientId(".lKh~71ug-q_qlkq.z95sHwOKbH00LVw")
+        .withClientSecret("CTUht2QuUJ9xOb6hZqkD4hGPkDGUCEDP4FlZjp0F2FkNgbC2KjPip57AxQj48GtB")
+        .withRegion("dsm-1")
         .build();
   }
 

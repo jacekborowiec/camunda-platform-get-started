@@ -14,7 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @EnableZeebeClient
-@ZeebeDeployment(resources = "classpath:send-email.bpmn")
+@ZeebeDeployment(resources = "classpath:*.bpmn")
 public class ProcessApplication implements CommandLineRunner {
 
   private final static Logger LOG = LoggerFactory.getLogger(ProcessApplication.class);
@@ -28,16 +28,16 @@ public class ProcessApplication implements CommandLineRunner {
 
   @Override
   public void run(final String... args) throws Exception {
-    final ProcessInstanceEvent event =
-        client
-            .newCreateInstanceCommand()
-            .bpmnProcessId("send-email")
-            .latestVersion()
-            .variables(Map.of("message_content", "Hello from the Spring Boot get started"))
-            .send()
-            .join();
-
-    LOG.info("Started instance for processDefinitionKey='{}', bpmnProcessId='{}', version='{}' with processInstanceKey='{}'",
-        event.getProcessDefinitionKey(), event.getBpmnProcessId(), event.getVersion(), event.getProcessInstanceKey());
+//    final ProcessInstanceEvent event =
+//        client
+//            .newCreateInstanceCommand()
+//            .bpmnProcessId("Process_7cb0ecec-4203-4d15-b64a-c192b15b9965")
+//            .latestVersion()
+//            .variables(Map.of("clientId", 2))
+//            .send()
+//            .join();
+//
+//    LOG.info("Started instance for processDefinitionKey='{}', bpmnProcessId='{}', version='{}' with processInstanceKey='{}'",
+//        event.getProcessDefinitionKey(), event.getBpmnProcessId(), event.getVersion(), event.getProcessInstanceKey());
   }
 }
